@@ -1,3 +1,5 @@
+package Products.Instruments;
+
 public enum Family {
 
     BRASS("brass"),
