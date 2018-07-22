@@ -1,10 +1,13 @@
 import Products.Accessories.DrumSticks;
+import Products.ISell;
 import Products.Instruments.Cello;
 import Products.Instruments.DoubleBass;
 import Products.Instruments.Drums;
 import Products.Instruments.Family;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,6 +49,14 @@ public class ShopTest {
     @Test
     public void calculateTotalPotentialProfit(){
         assertEquals(1033, shop.totalPotentialProfit());
+    }
+
+    @Test
+    public void canReturnInstancesOfType(){
+        ArrayList<ISell> strings = new ArrayList<ISell>();
+        strings.add(doublebass);
+        strings.add(cello);
+        assertEquals(strings, shop.getAllOfOneType(Family.STRINGS));
     }
 
 }
